@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 @font-face {
     font-family: 'lato';
     src: url('../fonts/lato-light.woff2') format('woff2'),
@@ -56,6 +57,13 @@ body {
 
 .container {
     width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    flex-grow: 1;
 }
 
 .page-header {
@@ -65,7 +73,6 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
-    padding: 0 32px;
     box-sizing: border-box;
     background: #222222;
     /* для расположения мобильного меню. */
@@ -450,7 +457,7 @@ body {
 }
 
 .fashion {
-    color: red;
+    color: #F16D7F;
 }
 
 .categories {
@@ -629,6 +636,7 @@ body {
 .products-item-photo {
     display: block;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -1039,8 +1047,22 @@ button:focus-visible {
     text-transform: uppercase;
 }
 
+.filter-list-btn span {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #EF5B70;
+    text-transform: uppercase;
+}
+
 .filter-btn svg {
     margin: 0 0 0 11px;
+    fill: #000000;
+}
+
+.filter-list-btn svg {
+    margin: 0 0 0 11px;
+    fill: #EF5B70;
 }
 
 .filter-btn:hover span {
@@ -1099,8 +1121,7 @@ button:focus-visible {
 }
 
 .filter-list-item span {
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: #000000;
+    color: #EF5B70;
 }
 
 .filter-list-item::before {
@@ -1617,7 +1638,9 @@ button:focus-visible {
 
 .add-to-card-block {
     display: flex;
-    max-width: 400px;
+    max-width: 372px;
+    padding: 0 26px 0 0;
+    box-sizing: border-box;
 }
 
 /*new filter-list for product page*/
@@ -1633,7 +1656,7 @@ button:focus-visible {
 .list-choose-color {
     border: none;
     position: relative;
-    margin: 0 42px 0 0;
+
 }
 
 .list-choose-color-btn-title {
@@ -1717,6 +1740,15 @@ button:focus-visible {
     position: absolute;
     top: 1px;
     left: -24px;
+}
+
+.choose-size-btn-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6F6E6E;
+    text-transform: uppercase;
+    position: relative;
 }
 
 .choose-size-btn-title svg {
@@ -1923,20 +1955,23 @@ button:focus-visible {
 }
 
 .cart-main-item-txt-wrp {
-    padding: 22px 97px 55px 31px;
+    padding: 22px 22px 55px 31px;
+    width: 390px;
+    box-sizing: border-box;
 }
 
 .cart-main-item-close-button {
     fill: #575757;
-    position: absolute;
-    top: 32px;
-    left: 602px;
+    padding: 6px 0 0 0;
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-color: transparent;
 }
 
 .cart-main-item-close-button:hover {
     fill: #EF5B70;
 }
-
 
 .cart-main-item-close-button:active {
     fill: currentColor;
@@ -1949,7 +1984,11 @@ button:focus-visible {
     color: #222222;
     text-transform: uppercase;
     margin-bottom: 42px;
-    position: relative;
+}
+
+.cart-main-item-title-wrp {
+    display: flex;
+    justify-content: space-between;
 }
 
 .cart-main-item-characteristics {
@@ -1969,7 +2008,6 @@ button:focus-visible {
 }
 
 .cart-main-item-characteristics-quantity-field {
-    padding: 1px 16px;
     border: 1px solid #EAEAEA;
     margin-left: 24px;
     font-weight: 400;
@@ -1979,6 +2017,7 @@ button:focus-visible {
     width: 44px;
     height: 25px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .cart-main-buttons {
@@ -2052,11 +2091,23 @@ button:focus-visible {
 .quote {
     text-transform: uppercase;
     width: 101px;
+    height: 35px;
     font-weight: 300;
     font-size: 11px;
     line-height: 13px;
     text-align: center;
-    padding: 12px;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #4A4A4A;
+}
+
+.quote:hover {
+    background-color: #A4A4A4;
+    color: #FFFFFF;
+}
+
+.quote:active {
+    background-color: #FFFFFF;
     color: #4A4A4A;
 }
 
@@ -2147,6 +2198,7 @@ button:focus-visible {
 
 .registration-main-form {
     max-width: 360px;
+    margin: 0 22px 0 0;
 }
 
 .registration-main-loyalty {
@@ -2182,11 +2234,27 @@ button:focus-visible {
     color: #B1B1B1;
 }
 
+.registration-main-form-male-choice {
+    display: flex;
+    align-items: center;
+}
+
+.male {
+    margin: 0 10px 0 0;
+    width: 17px;
+    height: 17px;
+}
+
 .male-female {
     font-weight: 300;
     font-size: 11px;
     line-height: 13px;
     color: #000000;
+    margin: 0 20px 0 0;
+}
+
+.other {
+    display: none;
 }
 
 .registration-main-form-text {
@@ -2202,7 +2270,7 @@ button:focus-visible {
     width: 167px;
     margin-bottom: 96px;
     text-transform: uppercase;
-    padding: 16px 29px;
+    padding: 15.5px 29px;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
@@ -2279,6 +2347,7 @@ button:focus-visible {
 @media (max-width: 768px) {
     .page-header {
         min-height: 74px;
+        padding: 0 36px 0 32px;
     }
 
     .banner {
@@ -2487,15 +2556,6 @@ button:focus-visible {
         max-width: none;
     }
 
-    .cart-main-item-txt-wrp {
-        padding: 22px 187px 62px 31px;
-    }
-
-    .cart-main-item-close-button {
-        top: 28px;
-        left: 694px;
-    }
-
     .cart-main-buttons {
         justify-content: space-between;
         display: flex;
@@ -2517,6 +2577,57 @@ button:focus-visible {
         margin: 39px 0 0 0;
     }
 
+    .registration-main-top {
+        min-height: 148px;
+        padding: 0 0 0 16px;
+        box-sizing: border-box;
+    }
+
+    .registration-main-top-wrp {
+        margin-bottom: 40px;
+    }
+
+    .registration-main-content {
+        box-sizing: border-box;
+        padding: 0 16px;
+    }
+
+    .registration-main-loyalty {
+        max-width: 354px;
+    }
+
+    .registration-main-loyalty-title,
+    .registration-main-loyalty-txt {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .registration-main-loyalty-list li {
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 16px;
+    }
+
+    .registration-main-loyalty-list li::before {
+        top: 2px;
+        left: -43px;
+    }
+
+    .registration-main-form-join-button {
+        margin-bottom: 113px;
+    }
+
+    .other {
+        display: inline;
+    }
+
+    .registration-main-loyalty-title {
+        margin-bottom: 32px;
+    }
+
+    .registration-main-loyalty-txt {
+        margin-bottom: 22px;
+    }
 }
 
 @media (max-width: 752px) {
@@ -2531,7 +2642,25 @@ button:focus-visible {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 586px) {
+    .cart-main-form {
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .cart-main-form-total {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 586px) {
+    .cart-main-buttons {
+        padding: 0 0 65px 0;
+    }
+}
+
+
+@media (max-width: 376px) {
 
     .account-icon,
     .basket-icon {
@@ -2716,7 +2845,7 @@ button:focus-visible {
 
     .list-size-wrp {
         top: 19px;
-        left: -33px;
+        left: 0px;
     }
 
     .copyright {
@@ -2738,14 +2867,14 @@ button:focus-visible {
     }
 
     .list-choose-color-btn-title,
-    .list-size-btn-title,
+    .list-size-btn-title-products-page,
     .list-quantity-btn-title {
         font-size: 10px;
         line-height: 12px;
     }
 
     .list-choose-color,
-    .list-size {
+    .list-choose-size {
         margin: 0;
     }
 
@@ -2789,13 +2918,6 @@ button:focus-visible {
         height: 15px;
     }
 
-    .cart-main-item-close-button {
-        top: 16px;
-        left: 333px;
-        width: 10px;
-        height: 10px;
-    }
-
     .cart-main-item-photo-wrp {
         max-width: 143px;
         height: 188px;
@@ -2812,6 +2934,7 @@ button:focus-visible {
 
     .cart-main-buttons {
         padding: 0;
+        margin: 0 0 48px 0;
     }
 
     .cart-main-list {
@@ -2823,5 +2946,93 @@ button:focus-visible {
         line-height: 14px;
         padding: 9px 18px;
         text-transform: initial;
+        width: 175px;
+    }
+
+    .cart-main-top-title {
+        padding: 50px 67px 69px 86px;
+    }
+
+    .clear {
+        filter: none;
+    }
+
+    .cart-main-form-total {
+        margin: 39px 0 0 0;
+    }
+
+    .cart-main {
+        margin: 0 0 96px 0;
+    }
+
+    .registration-main-content {
+        flex-direction: column;
+        padding: 0 9px;
+    }
+
+    .registration-main-top {
+        padding: 0;
+    }
+
+    .registration-main-top-wrp {
+        justify-content: center;
+    }
+
+    .registration-main-form-join-button {
+        margin-bottom: 40px;
+    }
+
+    .registration-main-content {
+        margin: 0 0 84px 0;
+    }
+}
+
+@media (max-width: 332px) {
+    .add-to-card-block {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 368px) {
+    .cart-main-form-adress {
+        max-width: fit-content;
+    }
+
+    .cart-main-form-total {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 316px) {
+    .cart-main-form-total-line {
+        width: initial;
+    }
+}
+
+@media (max-width: 300px) {
+    .filter-list-details {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 295px) {
+    .filter-btn span {
+        display: none;
+    }
+
+    .cart-main-top-title {
+        padding: 0;
+    }
+}
+
+@media (max-width: 268px) {
+    .filter-btn span {
+        display: none;
+    }
+}
+
+@media (max-width: 252px) {
+    .pagination-block {
+        display: none;
     }
 }
